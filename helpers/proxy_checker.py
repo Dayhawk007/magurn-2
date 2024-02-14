@@ -1,5 +1,6 @@
 import requests
 
+
 def scrape_proxies():
     api_url="https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=elite"
     proxies=requests.get(api_url).text.split("\n")
@@ -15,15 +16,7 @@ def check_and_get_proxies(proxies):
             pass
     
 
-# Example usage
-proxy_list = [
-    "http://10.10.1.10:3128",
-    "http://10.10.1.11:3128",
-    "http://10.10.1.12:3128",
-]
 
-live_proxy=check_and_get_proxies(scrape_proxies())
 
-print(live_proxy)
 
 
